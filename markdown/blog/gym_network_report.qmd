@@ -34,6 +34,8 @@ data_dir <- "../../dataset/Network Canvas Export"
 rel_labels <- c("Close friend", "Casual friend", "Family member",
                 "Romantic partner", "Coworker/Classmate",
                 "Online-only friend", "Other")
+library(ggraph)
+library(tidygraph)
 ```
 
 # Introduction
@@ -54,9 +56,9 @@ We designed a personal network interview using **Network Canvas** (v3.1.2), a ta
 
 Participants named up to 15 people across three prompts, each targeting a different channel of exercise influence:
 
-1. **Gym partners** — "Who do you go to the gym or work out with?"
-2. **Encouragers** — "Who encourages or motivates you to exercise, even if they don't work out with you?"
-3. **Social media fitness contacts** — "Who do you follow or interact with on social media specifically around fitness and exercise?"
+1.  **Gym partners** — "Who do you go to the gym or work out with?"
+2.  **Encouragers** — "Who encourages or motivates you to exercise, even if they don't work out with you?"
+3.  **Social media fitness contacts** — "Who do you follow or interact with on social media specifically around fitness and exercise?"
 
 These three generators were designed to capture distinct pathways of social influence: direct behavioral co-participation, interpersonal encouragement, and ambient digital exposure.
 
@@ -64,10 +66,10 @@ These three generators were designed to capture distinct pathways of social infl
 
 After naming contacts, participants rated each person on the following attributes:
 
-- **Relationship type** — close friend, casual friend, family member, romantic partner, coworker/classmate, online-only friend, or other
-- **Physical activity level** — how physically active they perceive the contact to be (1 = Zero active, 5 = Extra active)
-- **Motivation provided** — how much this contact motivates them to exercise (1 = None, 5 = Absolute)
-- **Interaction frequency** — how often they interact with this contact (0 = Never, 5 = Every day)
+-   **Relationship type** — close friend, casual friend, family member, romantic partner, coworker/classmate, online-only friend, or other
+-   **Physical activity level** — how physically active they perceive the contact to be (1 = Zero active, 5 = Extra active)
+-   **Motivation provided** — how much this contact motivates them to exercise (1 = None, 5 = Absolute)
+-   **Interaction frequency** — how often they interact with this contact (0 = Never, 5 = Every day)
 
 ## Alter-Alter Ties
 
@@ -140,7 +142,7 @@ alterData <- alterData |>
          motivate_score, interact_freq)
 ```
 
-The pilot sample consists of **`r nrow(egoData)` graduate students**, who together named **`r nrow(alterData)` contacts** in their exercise networks.
+The pilot sample consists of 38, who together named **`r nrow(alterData)` contacts** in their exercise networks.
 
 ## Summary Statistics
 
@@ -430,6 +432,29 @@ network::add.edges(net_pool, edge_src[ok], edge_tgt[ok])
 network::set.vertex.attribute(net_pool, "alter_activity", alters_ergm$alter_activity)
 ```
 
+```{r}
+g <- as_tbl_graph(net_pool) |>
+  mutate(activity = network::get.vertex.attribute(net_pool, "alter_activity"))
+
+ggraph(g, layout = "fr") +
+  geom_edge_link(alpha = 0.3, color = "gray60") +
+  geom_node_point(aes(color = activity), size = 4) +
+  scale_color_gradient(
+    low  = "#d0e8f1",
+    high = "#1a3a5c", 
+    name = "Activity Level"
+  ) +
+  labs(
+    title    = "Pooled Alter Network",
+    subtitle = "Node color = exercise activity level (1–5)"
+  ) +
+  theme_graph() +
+  theme(
+    plot.title    = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 11)
+  )
+```
+
 ### Model 1 — Baseline Density
 
 ```{r ergm1}
@@ -494,10 +519,10 @@ The practical implication is specific: exercise support is a relationship-level 
 This project was completed by four team members. Contributions were as follows:
 
 | Member | Role | Specific contributions |
-|---|---|---|
-| **Jingqi Lu** | Analysis lead & report writing | Built and debugged the R/Quarto analysis pipeline; wrote OLS, multilevel, and ERGM model code; authored the written report and visualizations |
-| **Hangyu Lyu** | Protocol design & data collection | Co-designed the Network Canvas interview protocol; recruited participants and conducted interviews; contributed to the Methods and Protocol sections |
-| **Yuxuan Li** | Data collection & cleaning | Conducted participant interviews; performed initial data cleaning and variable recoding; contributed to the Data section and summary statistics |
-| **Xizhuo Wang** | Data collection & interpretation | Conducted participant interviews; contributed to the interpretation of findings and the Lessons from the Pilot section |
+|----|----|----|
+| **Jingqi Lu** | Analysis lead & report writing & data collection | Built and debugged the R/Quarto analysis pipeline; wrote OLS, multilevel, and ERGM model code; authored the written report and visualizations; built the Netlify page |
+| **Hangyu Lyu** | Protocol design & data collection & writer | Co-designed the Network Canvas interview protocol; recruited participants and conducted interviews; wrote the final page of the protocol and the one-page write-up; authored the conclusion section |
+| **Yuxuan Li** | Data collection & cleaning & writer | Wrote the whole research proposal; conducted participant interviews; performed initial data cleaning and variable recoding; authored the OLS model section |
+| **Xizhuo Wang** | Protocol design & data collection | Set up the initial Network Canvas framework; conducted participant interviews; authored the introduction and methodology sections |
 
 All four members contributed to the conceptual framing of the research question and participated in team discussions of results.
