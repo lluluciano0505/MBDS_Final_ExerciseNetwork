@@ -29,7 +29,7 @@ for (p in pkgs) {
   suppressPackageStartupMessages(library(p, character.only = TRUE))
 }
 
-data_dir <- "."
+data_dir <- "../../dataset/Network Canvas Export"
 
 rel_labels <- c("Close friend", "Casual friend", "Family member",
                 "Romantic partner", "Coworker/Classmate",
@@ -278,6 +278,51 @@ ggpredict(model3, "is_active") |>
 ```
 
 The predicted motivation score is approximately **0.84 points higher** for exercise-active contacts, holding interaction frequency, participant gym frequency, and gender constant. The confidence intervals for the two groups do not overlap, indicating a robust and practically meaningful difference.
+
+### Motivation by Relationship Type
+
+```{r viz-reltype}
+#| fig-height: 4
+merged_data |>
+  filter(!is.na(rel_type), rel_type != "Unknown", !is.na(motivate_score)) |>
+  mutate(rel_type = fct_reorder(rel_type, motivate_score, median, .na_rm = TRUE)) |>
+  ggplot(aes(x = rel_type, y = motivate_score, fill = rel_type)) +
+  geom_boxplot(alpha = 0.7, show.legend = FALSE, width = 0.5) +
+  scale_fill_brewer(palette = "Set2") +
+  labs(title = "Motivation score by relationship type",
+       subtitle = "Ordered by median score",
+       x = NULL, y = "Motivation score (1 = None, 5 = Absolute)") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+Romantic partners and close friends tend to provide the highest motivation scores, while online-only contacts and coworkers/classmates cluster toward the lower end. This pattern suggests that tie strength and emotional closeness — not just physical co-presence — shape motivational influence.
+
+### Interaction Frequency and Motivation
+
+```{r viz-interact}
+#| fig-height: 4
+merged_data |>
+  filter(!is.na(interact_freq), !is.na(motivate_score)) |>
+  mutate(interact_freq = factor(interact_freq, 0:5,
+    c("Never", "Occasionally", "Sometimes", "Often", "Very frequently", "Every day"))) |>
+  group_by(interact_freq) |>
+  summarise(mean_motiv = mean(motivate_score, na.rm = TRUE),
+            se = sd(motivate_score, na.rm = TRUE) / sqrt(n()),
+            .groups = "drop") |>
+  ggplot(aes(x = interact_freq, y = mean_motiv, group = 1)) +
+  geom_ribbon(aes(ymin = mean_motiv - se, ymax = mean_motiv + se),
+              alpha = 0.2, fill = "#2C7BB6") +
+  geom_line(color = "#2C7BB6", linewidth = 1) +
+  geom_point(size = 3, color = "#2C7BB6") +
+  labs(title = "More frequent contact → stronger motivation",
+       subtitle = "Mean motivation score (± 1 SE) by interaction frequency",
+       x = "Interaction frequency", y = "Mean motivation score (1–5)") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+```
+
+Motivation scores rise steadily with interaction frequency, from "Never" to "Every day." This monotonic trend is consistent with the multilevel model finding (β = 0.14, *p* = .017) and suggests that regular contact — not just who someone is — matters for exercise motivation.
 
 ------------------------------------------------------------------------
 

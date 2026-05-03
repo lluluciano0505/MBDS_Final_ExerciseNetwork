@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network Exercise Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Spectral:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-1: #f6f7f2;
+      --bg-2: #d7e8da;
+      --ink: #1b2a1f;
+      --muted: #4b5f52;
+      --card: #ffffff;
+      --accent: #2e7d5a;
+      --accent-2: #153f2f;
+      --line: rgba(27, 42, 31, 0.14);
+      --shadow: 0 24px 50px rgba(21, 63, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1600px 800px at 10% -10%, #ffffff 0%, transparent 45%),
+                  linear-gradient(125deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 20px 56px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px 30px;
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      animation: rise 0.8s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--accent-2);
+      border: 1px solid rgba(46, 125, 90, 0.3);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(215, 232, 218, 0.5);
+    }
+
+    h1 {
+      margin: 14px 0 10px;
+      font-family: "Spectral", serif;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 76ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      will-change: transform;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(115deg, #225b42, #2e7d5a);
+      box-shadow: 0 12px 24px rgba(34, 91, 66, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--accent-2);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(21, 63, 47, 0.24);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: saturate(1.08);
+    }
+
+    .preview {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      animation: rise 1s ease 0.15s both;
+    }
+
+    .preview-head {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 72vh;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 20px 12px 28px;
+      }
+
+      .hero {
+        padding: 22px 16px;
+        border-radius: 16px;
+      }
+
+      .preview {
+        margin-top: 16px;
+        border-radius: 14px;
+      }
+
+      iframe {
+        min-height: 64vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">MBDS Network Blog</span>
+      <h1>Who Gets You to the Gym?</h1>
+      <p class="subtitle">
+        A blog-style entry page for the final network exercise report. This page highlights the study and embeds the full rendered analysis below.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="gym_network_report.html" target="_blank" rel="noopener">Open Full Report</a>
+        <a class="btn btn-secondary" href="gym_network_report.qmd" target="_blank" rel="noopener">View Quarto Source</a>
+      </div>
+    </section>
+
+    <section class="preview">
+      <div class="preview-head">Embedded report preview</div>
+      <iframe src="gym_network_report.html" title="Gym Network Report"></iframe>
+    </section>
+  </main>
+</body>
+</html>

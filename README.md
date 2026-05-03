@@ -3,7 +3,7 @@
 This repository has been organized by purpose:
 
 - `dataset/`: stores all raw data files (CSV, GraphML, etc.)
-- `markdown/`: stores Markdown documents (currently empty and ready for future documentation)
+- `markdown/`: stores documentation and report outputs
 
 ## Current Directory Structure
 
@@ -16,6 +16,10 @@ MBDS_Final_ExerciseNetwork/
 │       ├── Anonymous Participant_..._ego.csv
 │       └── Anonymous Participant_....graphml
 ├── markdown/
+│   └── blog/
+│       ├── index.html
+│       ├── gym_network_report.qmd
+│       └── gym_network_report.html
 └── README.md
 ```
 
@@ -31,5 +35,11 @@ MBDS_Final_ExerciseNetwork/
 ## Recommended Usage
 
 1. Keep raw data read-only; create separate output folders for processed results.
-2. Put future analysis reports, method notes, and meeting notes in `markdown/`.
-3. Before future submissions, consider adding data cleaning scripts, a field dictionary, and an analysis workflow document.
+2. Store reports and rendered pages under `markdown/blog/`.
+3. Open `markdown/blog/index.html` in a browser to view the blog-style report entry page.
+
+## Rendering Notes
+
+- The Quarto source file is `markdown/blog/gym_network_report.qmd`.
+- The rendered page is `markdown/blog/gym_network_report.html`.
+- In the QMD setup block, `data_dir` points to `dataset/Network Canvas Export/` for reproducible rendering.
