@@ -36,28 +36,50 @@ rel_labels <- c("Close friend", "Casual friend", "Family member",
                 "Online-only friend", "Other")
 ```
 
-# Background & Hypotheses
+# Introduction
 
-Do the people around you shape how often you go to the gym? This study explores whether graduate students' gym attendance is influenced by **who they know** — the structure and composition of their personal networks — or whether individual motivation is all that matters.
+Physical exercise is one of the most reliably health-promoting behaviors available to people, yet maintaining a consistent gym habit is difficult. Most research on exercise behavior focuses on individual-level factors — motivation, self-efficacy, habit formation. Far less attention has been paid to a simpler social question: **does it matter who you know?**
 
-We draw on social support and social influence theories and test two competing explanations:
+Social support and social influence theories suggest that the people around us shape our health behaviors in meaningful ways. A friend who lifts weights, a partner who runs every morning, or a classmate who shares workout progress online may each, in different ways, affect how often we actually show up to the gym. Yet the mechanisms are unclear: does the *aggregate* composition of your social network matter, or is it specific *dyadic* relationships that drive the effect?
 
-> **H0 (Null):** Gym attendance is independent of who you know. Individual factors explain everything.
->
-> **H1 (Alternative):** People with more exercise-active and supportive contacts go to the gym more often.
+This study addresses that gap using ego-centric network data collected from graduate students. We ask: **do the structure and composition of a person's exercise-related social network predict gym attendance, and which kinds of contacts are most motivating?** This question has practical implications for public health interventions — if social influence on exercise is real and identifiable, it suggests that social network-based nudges may be more effective than purely individual-focused strategies.
+
+------------------------------------------------------------------------
+
+# Protocol
+
+We designed a personal network interview using **Network Canvas** (v3.1.2), a tablet-based tool built specifically for ego-centric network studies. The protocol proceeded in three phases.
+
+## Name Generators
+
+Participants named up to 15 people across three prompts, each targeting a different channel of exercise influence:
+
+1. **Gym partners** — "Who do you go to the gym or work out with?"
+2. **Encouragers** — "Who encourages or motivates you to exercise, even if they don't work out with you?"
+3. **Social media fitness contacts** — "Who do you follow or interact with on social media specifically around fitness and exercise?"
+
+These three generators were designed to capture distinct pathways of social influence: direct behavioral co-participation, interpersonal encouragement, and ambient digital exposure.
+
+## Alter Attribute Questions
+
+After naming contacts, participants rated each person on the following attributes:
+
+- **Relationship type** — close friend, casual friend, family member, romantic partner, coworker/classmate, online-only friend, or other
+- **Physical activity level** — how physically active they perceive the contact to be (1 = Zero active, 5 = Extra active)
+- **Motivation provided** — how much this contact motivates them to exercise (1 = None, 5 = Absolute)
+- **Interaction frequency** — how often they interact with this contact (0 = Never, 5 = Every day)
+
+## Alter-Alter Ties
+
+Finally, participants indicated which of their named contacts know each other, allowing us to map the internal structure of each person's exercise network.
+
+## Ego-Level Survey
+
+Participants also answered questions about themselves, including: how many days per week they go to the gym, their motivation for exercising (appearance vs. personal achievement), and how frequently they post workouts on social media.
 
 ------------------------------------------------------------------------
 
 # Data & Sample
-
-Data were collected using **Network Canvas** (v3.1.2), a tool designed for personal network interviews. Each participant:
-
-1.  Answered questions about their own gym habits and motivations
-2.  Named up to 15 people who influence their exercise life (across three prompts: gym partners, encouragers, and social media fitness contacts)
-3.  Rated each named person on several attributes
-4.  Indicated which of those people know each other
-
-This design — called an **egocentric network study** — lets us measure both the individual and their social environment simultaneously.
 
 ```{r load-data}
 dataDirectoryPath <- data_dir
@@ -117,6 +139,64 @@ alterData <- alterData |>
          rel_type, alter_activity, is_active,
          motivate_score, interact_freq)
 ```
+
+The pilot sample consists of **`r nrow(egoData)` graduate students**, who together named **`r nrow(alterData)` contacts** in their exercise networks.
+
+## Summary Statistics
+
+```{r summary-stats}
+# Ego-level summary
+ego_summary <- egoData |>
+  filter(!is.na(gym_days)) |>
+  summarise(
+    N                  = n(),
+    `Female (%)`       = round(mean(gender == "Female", na.rm = TRUE) * 100, 1),
+    `Gym days (mean)`  = round(mean(gym_days, na.rm = TRUE), 2),
+    `Gym days (SD)`    = round(sd(gym_days, na.rm = TRUE), 2),
+    `Gym days (range)` = paste0(min(gym_days, na.rm = TRUE), "–", max(gym_days, na.rm = TRUE))
+  )
+
+# Network-level summary (per ego)
+net_size_summary <- alterData |>
+  group_by(networkCanvasEgoUUID) |>
+  summarise(net_size = n(), .groups = "drop") |>
+  summarise(
+    `Network size (mean)` = round(mean(net_size), 2),
+    `Network size (SD)`   = round(sd(net_size), 2)
+  )
+
+# Alter-level summary
+alter_summary <- alterData |>
+  summarise(
+    `Alter activity (mean)`   = round(mean(alter_activity, na.rm = TRUE), 2),
+    `Alter activity (SD)`     = round(sd(alter_activity, na.rm = TRUE), 2),
+    `Motivation score (mean)` = round(mean(motivate_score, na.rm = TRUE), 2),
+    `Motivation score (SD)`   = round(sd(motivate_score, na.rm = TRUE), 2)
+  )
+
+bind_cols(ego_summary, net_size_summary, alter_summary) |>
+  mutate(across(everything(), as.character)) |>  
+  pivot_longer(everything(), names_to = "Variable", values_to = "Value") |>
+  knitr::kable(caption = "Descriptive statistics — pilot sample")
+```
+
+On average, participants reported going to the gym about `r round(mean(egoData$gym_days, na.rm=TRUE), 1)` days per week (SD = `r round(sd(egoData$gym_days, na.rm=TRUE), 1)`), ranging from 0 to 7. Each participant named an average of `r round(nrow(alterData)/nrow(egoData), 1)` contacts. Named contacts were rated moderately active on average (M ≈ `r round(mean(alterData$alter_activity, na.rm=TRUE), 1)` out of 5) and provided moderate motivation (M ≈ `r round(mean(alterData$motivate_score, na.rm=TRUE), 1)` out of 5).
+
+**Data cleaning notes:** Ego records with missing `sessionFinish` or `gym_days` were excluded from analysis. Alter records were retained if they appeared in the `attributeList_Person` files; edges referencing missing alter UUIDs were dropped before ERGM estimation.
+
+------------------------------------------------------------------------
+
+# Methods
+
+We employ three complementary analytical approaches, each addressing a different level of the research question.
+
+**Part A — OLS Regression (ego level).** To test whether network characteristics predict gym attendance, we regress `gym_days` on individual motivations and progressively add network structure (density, size) and composition variables (proportion of active contacts, relationship-type entropy). Three nested models allow us to assess the incremental contribution of network factors over individual-level predictors.
+
+**Part B — Multilevel Models (contact level).** Because each participant names multiple contacts, motivation scores are nested within persons. We use random-intercept linear models (`lmer`) to ask which contact-level attributes — activity level, interaction frequency — predict motivational value, while controlling for participant characteristics. The intraclass correlation from a null model first establishes whether multilevel modeling is warranted.
+
+**Part C — ERGM (network structure).** To examine whether similarly active contacts cluster within ego networks, we pool all alter-alter edges into a single undirected network and fit Exponential Random Graph Models. We test for activity-level homophily using `absdiff`, controlling for a node-level activity covariate.
+
+All analyses are exploratory. Given the small pilot sample (N = `r nrow(egoData)`), results should be interpreted descriptively rather than inferentially.
 
 ------------------------------------------------------------------------
 
@@ -379,14 +459,45 @@ Adding `absdiff` — the absolute difference in activity levels between a pair �
 
 ------------------------------------------------------------------------
 
-# Discussion
+# Lessons from the Pilot
 
-This study examined whether personal social networks shape gym attendance among graduate students, using ego-centric network data collected via Network Canvas.
+The pilot data collection surfaced several challenges that should inform the design of a larger follow-up study.
 
-At the **participant level** (Part A), no network variable — density, size, proportion of active contacts, or relationship diversity — significantly predicted weekly gym frequency. Individual achievement motivation was the strongest predictor (β = 0.62), though it did not reach significance in this small sample. The evidence across all three OLS models is consistent with **H0**: who you know in the aggregate does not determine how often you work out.
+**What went well.** The egocentric interview format translated naturally to the gym-and-exercise domain. Participants had little difficulty naming contacts across the three prompts, and most produced networks of meaningful size. The alter attribute questions (activity level, motivation, interaction frequency) generated clean, usable data with low rates of missingness for the core variables.
 
-At the **contact level** (Part B), a consistent and robust pattern emerged. Contacts rated as highly physically active provided significantly stronger motivation to exercise (β = 0.84, *p* \< .001, Model 3), and this effect *strengthened* after accounting for participant characteristics — ruling out a straightforward selection explanation. Interaction frequency also contributed (β = 0.14, *p* = .017), though its effect was smaller. Exercise support appears to be a **dyadic phenomenon**: it depends on the specific relationship rather than the overall composition of one's network.
+**What needs to change.**
 
-The **ERGM results** (Part C) add a structural layer: exercise-active alters tend to cluster with similarly active contacts (absdiff β = −0.58, *p* \< .001), forming homophilic micro-clusters within ego networks. This structural tendency may amplify the contact-level motivational effects — being embedded among similarly active people could reinforce exercise norms through repeated, mutual exposure.
+*Interface unfamiliarity.* Several participants struggled with the Network Canvas interface, particularly with adding the Name Generator component. This slowed down data collection and may have introduced variability in how carefully participants engaged with the alter-attribute screens. For a next round, a brief hands-on tutorial or a standardized onboarding screen should be added before the interview begins.
 
-**Limitations:** Small sample (N = `r nrow(egoData)`), cross-sectional design, and the constraints of egocentric data — which cannot distinguish social influence from selection, nor fully capture the ego's broader network context.
+*Solo gym-goers.* At least one participant reported going to the gym exclusively alone and had no meaningful contacts to name across the three prompts, yielding a network of size zero. This is a valid but analytically problematic response — it provides no network data to model. Future protocols should include a brief screener: participants who exercise entirely alone could be redirected to a shorter individual-level survey, or the name generators could be broadened to include "people you wish would work out with you" or "people whose exercise habits you admire" to still capture latent network effects.
+
+*Sample size.* With N = 41 participants, the OLS models are severely underpowered. A follow-up study targeting at least 100–150 participants would substantially increase precision and allow for more meaningful network-level inference.
+
+*Cross-sectional limitation.* A single-wave design cannot distinguish social influence (contacts pushing you to exercise more) from selection (active people choosing to associate with other active people). A longitudinal follow-up — even just two waves, pre- and post-semester — would allow a more credible causal interpretation.
+
+------------------------------------------------------------------------
+
+# Conclusions
+
+This study used ego-centric network data to ask whether the people in a graduate student's exercise-related social network shape how often they go to the gym, and which contacts are most motivating.
+
+At the **aggregate network level**, the answer is largely no. Neither network density, size, proportion of active contacts, nor relationship-type diversity significantly predicted weekly gym attendance. Individual achievement motivation was numerically the strongest predictor, though underpowered to reach significance. This is consistent with H0 and suggests that simply *having* many active people in your life is not enough to change your behavior.
+
+At the **dyadic level**, a clear pattern emerged. Contacts who are themselves highly physically active provide significantly stronger motivation to exercise (β = 0.84, *p* \< .001), and this effect is robust to controls for participant characteristics. Interaction frequency matters too, though its effect is smaller. The ERGM results add that similarly active contacts tend to cluster together — forming homophilic micro-groups that may amplify motivational influence through repeated social reinforcement.
+
+The practical implication is specific: exercise support is a relationship-level phenomenon. Interventions that simply expand someone's network are unlikely to work; what matters is having *particular* close, active contacts who are in regular contact with the target individual. Future research with larger samples, longitudinal design, and objective exercise data (e.g., step counts) would allow a more rigorous test of this conclusion.
+
+------------------------------------------------------------------------
+
+# Team Contributions
+
+This project was completed by four team members. Contributions were as follows:
+
+| Member | Role | Specific contributions |
+|---|---|---|
+| **Jingqi Lu** | Analysis lead & report writing | Built and debugged the R/Quarto analysis pipeline; wrote OLS, multilevel, and ERGM model code; authored the written report and visualizations |
+| **Hangyu Lyu** | Protocol design & data collection | Co-designed the Network Canvas interview protocol; recruited participants and conducted interviews; contributed to the Methods and Protocol sections |
+| **Yuxuan Li** | Data collection & cleaning | Conducted participant interviews; performed initial data cleaning and variable recoding; contributed to the Data section and summary statistics |
+| **Xizhuo Wang** | Data collection & interpretation | Conducted participant interviews; contributed to the interpretation of findings and the Lessons from the Pilot section |
+
+All four members contributed to the conceptual framing of the research question and participated in team discussions of results.
