@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,6b1cc489-2c90-41b8-acfe-30ab6c0c692c,e60b8cc1-6fa9-40a6-be37-dbc90427737a,,,4,,4,true,false,false,false,false,false,false,,,2,,,,4,,,Lu
+2,6b1cc489-2c90-41b8-acfe-30ab6c0c692c,0a4578f8-7ea7-4fa2-a687-11e18e2fdc9d,,,4,,4,true,false,false,false,false,false,false,,,2,,,,,,,Luo
+3,6b1cc489-2c90-41b8-acfe-30ab6c0c692c,22f5b1b0-e842-4f9f-bab8-60207219eb8d,,,4,,4,false,false,true,false,false,false,false,,,2,,,,5,,,Yang
+4,6b1cc489-2c90-41b8-acfe-30ab6c0c692c,3544b2dd-b323-4ec3-8649-725e873d6def,,,4,,4,false,false,false,false,false,false,true,,,2,,,,0,,,Jin

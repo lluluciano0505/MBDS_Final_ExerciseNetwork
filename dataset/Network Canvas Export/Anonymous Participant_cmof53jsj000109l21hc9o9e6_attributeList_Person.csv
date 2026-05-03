@@ -1,0 +1,4 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,68d4c101-dde9-46bc-a27a-23c575c636a6,2760f78c-75c6-4020-b04f-e9356f385d48,,,,,,true,false,false,false,false,false,false,,,,,,,3,,,Yang
+2,68d4c101-dde9-46bc-a27a-23c575c636a6,98b18db5-41ea-4d32-b090-66f156932a13,,,,,,true,false,false,false,false,false,false,,,,,,,4,,,Wang
+3,68d4c101-dde9-46bc-a27a-23c575c636a6,248d9402-d9f0-41c6-9992-bf2ae6fe8a17,,,,,,false,true,false,false,false,false,false,,,,,,,1,,,Chole

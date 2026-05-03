@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,f0fca04c-4ac1-426d-bf78-441813fe2ecf,94cb480d-1237-4f50-85b8-6f38279dbdb0,,,4,,3,false,false,false,true,false,false,false,,,2,,,,5,,,zheng
+2,f0fca04c-4ac1-426d-bf78-441813fe2ecf,f9bfb3e5-f4d4-4bd7-878b-e2cf04e13247,,,2,,3,true,false,false,false,false,false,false,,,2,,,,3,,,Tian
+3,f0fca04c-4ac1-426d-bf78-441813fe2ecf,1a0fa0f7-a838-4a88-a8e6-4afc886806e6,,,2,,4,false,false,true,true,false,false,false,,,2,,,,3,,,Wu
+4,f0fca04c-4ac1-426d-bf78-441813fe2ecf,f6b58a4d-b0d2-4b7c-90d5-dae925228ff9,,,4,,3,false,false,false,true,false,false,false,,,2,,,,5,,,zheng

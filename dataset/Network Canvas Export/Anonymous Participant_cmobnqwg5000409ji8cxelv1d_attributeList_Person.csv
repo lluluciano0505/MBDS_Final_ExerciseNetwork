@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,0003c83d-6880-450d-83da-5dca119c5de2,1c573a1c-6f5b-44b6-b485-a85af3d145f9,,,3,,2,false,true,false,false,false,false,false,,,1,,,,2,,,Fusang
+2,0003c83d-6880-450d-83da-5dca119c5de2,dacfd16f-b2d0-4902-a20d-f58ddd01460d,,,3,,3,true,false,false,false,false,false,false,,,2,,,,3,,,Yanyang
+3,0003c83d-6880-450d-83da-5dca119c5de2,887aacc7-6661-4350-8743-a90d82152b3c,,,4,,4,false,true,false,false,false,false,false,,,2,,,,2,,,Zhiying
+4,0003c83d-6880-450d-83da-5dca119c5de2,f77ef1b5-50f0-4fc0-a118-5f352a2a1d0f,,,4,,4,true,false,false,false,false,true,false,,,2,,,,2,,,Wenyao

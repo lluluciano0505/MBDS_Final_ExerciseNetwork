@@ -1,0 +1,6 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,7a218bd2-9286-4bea-a5be-073d17efea39,540f99ae-2045-4953-b280-281eb2669d1f,,,4,,3,true,false,false,false,false,false,false,,,2,,,,5,,,Yang
+2,7a218bd2-9286-4bea-a5be-073d17efea39,6cb256f3-bf93-4309-a749-e42b83d765b2,,,4,,4,true,false,true,false,false,false,false,,,1,,,,5,,,Wang
+3,7a218bd2-9286-4bea-a5be-073d17efea39,4c960eef-22b4-46c7-bdf5-ae6d2f89aa4b,,,2,,2,true,false,false,false,false,false,false,,,1,,,,5,,,Wei
+4,7a218bd2-9286-4bea-a5be-073d17efea39,3df5036e-f4ad-48ea-882a-fd0b41bce8a2,,,2,,3,true,false,false,false,false,false,false,,,1,,,,5,,,Xu
+5,7a218bd2-9286-4bea-a5be-073d17efea39,4d01c3f4-50ec-411a-bfb3-fae1b610a77b,,,4,,2,true,false,true,false,false,false,false,,,1,,,,5,,,Li

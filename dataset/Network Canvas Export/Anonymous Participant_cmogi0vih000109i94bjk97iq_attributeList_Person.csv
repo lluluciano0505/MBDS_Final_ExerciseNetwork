@@ -1,0 +1,16 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,bf16fac6-166d-4fc5-8e3f-b8605db241c4,a9d7d844-88ba-4548-999f-17079f3fff79,,,2,,2,false,false,false,false,false,false,true,,,1,,,,1,,,Zhao
+2,bf16fac6-166d-4fc5-8e3f-b8605db241c4,2494aa82-2d42-4349-b366-4d21a1f3e07f,,,2,,2,false,false,false,false,false,false,true,,,1,,,,1,,,Qian
+3,bf16fac6-166d-4fc5-8e3f-b8605db241c4,a5c6a5ef-2333-4f31-9aff-0fbba99d37ae,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Sun
+4,bf16fac6-166d-4fc5-8e3f-b8605db241c4,e8829a16-d62b-407a-95c7-56938411e20d,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Li
+5,bf16fac6-166d-4fc5-8e3f-b8605db241c4,567ba727-600b-41c3-a919-c76299d441b4,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Zhou
+6,bf16fac6-166d-4fc5-8e3f-b8605db241c4,7d1ac8df-279b-4ced-b19b-d28da55fb88a,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Wudashi
+7,bf16fac6-166d-4fc5-8e3f-b8605db241c4,556a7b81-8228-489e-a4dc-8caf25c524ec,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Pangbaobao
+8,bf16fac6-166d-4fc5-8e3f-b8605db241c4,b7ed4fc5-2c20-4bb0-b82c-9bdc38fa2dc7,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Qishiguai
+9,bf16fac6-166d-4fc5-8e3f-b8605db241c4,fc82a21e-0572-46f7-91aa-0f4c5c9a18fb,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Xiaoyanjing
+10,bf16fac6-166d-4fc5-8e3f-b8605db241c4,c8c1707e-53b9-4d77-ba10-4e3f9c5d501b,,,1,,1,true,false,false,false,false,false,false,,,1,,,,0,,,Qixialin
+11,bf16fac6-166d-4fc5-8e3f-b8605db241c4,2aee04f1-86ee-485d-a097-37dafe34aff5,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Iris
+12,bf16fac6-166d-4fc5-8e3f-b8605db241c4,2b87e2b0-f87b-47c5-bba2-ee5a4894d9c6,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Ivy
+13,bf16fac6-166d-4fc5-8e3f-b8605db241c4,64aab2ff-fd48-4a63-8d7a-b7cad9a8b2fc,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,League
+14,bf16fac6-166d-4fc5-8e3f-b8605db241c4,d6dab597-7518-41f1-8705-804834152456,,,1,,1,false,false,false,false,false,false,true,,,1,,,,0,,,Panda
+15,bf16fac6-166d-4fc5-8e3f-b8605db241c4,d80d90f4-5fd7-4e21-8c53-aab42e915a65,,,5,,5,true,false,false,false,false,false,false,,,2,,,,5,,,Mandy

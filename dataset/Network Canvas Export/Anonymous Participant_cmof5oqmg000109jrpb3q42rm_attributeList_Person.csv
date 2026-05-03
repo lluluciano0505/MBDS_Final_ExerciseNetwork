@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,e43b7972-6ffa-4e69-9ee7-d75b0c028703,3ab91485-0b68-4f79-a63e-0bf6b34f1319,,,4,,3,true,false,false,false,false,false,false,,,1,,,,2,,,Zhang
+2,e43b7972-6ffa-4e69-9ee7-d75b0c028703,3074de26-9e2f-47a3-82b9-ad8233d9bfa1,,,3,,1,false,false,false,false,false,true,false,,,2,,,,0,,,Guan
+3,e43b7972-6ffa-4e69-9ee7-d75b0c028703,d0e916d0-60df-4341-a0c6-1b8eeb914fc8,,,3,,1,false,false,false,false,false,false,true,,,2,,,,0,,,Ke
+4,e43b7972-6ffa-4e69-9ee7-d75b0c028703,04215c13-0017-45a0-98d3-6d9781209524,,,5,,2,false,false,false,false,false,false,true,,,2,,,,0,,,Ding

@@ -1,0 +1,13 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,bef04c38-ff86-4c0c-85ab-a3d416efd67f,,,3,,1,false,true,false,false,true,false,false,,,1,,,,2,,,Hu
+2,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,731168da-eb3e-4176-bbf8-98fca29f87ee,,,4,,3,false,true,false,false,true,false,false,,,1,,,,3,,,Hu
+3,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,74c60eed-c0d8-4067-a069-cfc16be5b52a,,,5,,4,true,false,false,false,true,false,false,,,2,,,,5,,,Yang
+4,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,2ae87a26-e1f6-48ff-842c-fb667e6ca794,,,4,,3,true,false,false,false,true,false,false,,,2,,,,5,,,Lu
+5,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,9d5fa31d-3c67-4011-a083-27777516fd45,,,2,,4,false,false,true,false,false,false,false,,,2,,,,4,,,Chen
+6,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,57773b7c-384f-49f5-ac72-f71b7d9d8e19,,,5,,4,false,false,true,false,false,false,false,,,2,,,,3,,,Fan
+7,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,6e1de23e-9d11-4642-9491-0aa038e7a222,,,3,,5,false,false,true,false,false,false,false,,,1,,,,1,,,Zhang
+8,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,b2a9ab55-4473-4d59-be29-86cd13923701,,,2,,2,false,false,true,false,false,false,false,,,2,,,,4,,,Sheng
+9,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,87d61979-90b5-4a6b-af93-4a2dde43b4e5,,,4,,4,true,false,false,false,true,false,false,,,2,,,,5,,,Lu
+10,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,743f06d8-7911-4e75-b72b-3cb55497f3f4,,,5,,2,false,false,false,false,true,false,false,,,1,,,,0,,,Ding
+11,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,022dcefa-6afb-46af-82bb-181feb6671af,,,4,,3,false,true,false,false,false,false,false,,,2,,,,2,,,Jin
+12,ed6d49be-0f88-4b75-a34d-e1cdd314c9ac,5e0330d4-8818-41e1-aed8-a349972ab740,,,3,,2,false,false,false,false,true,false,false,,,1,,,,1,,,Zuo

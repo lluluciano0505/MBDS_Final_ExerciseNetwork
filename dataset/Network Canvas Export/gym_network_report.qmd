@@ -1,0 +1,347 @@
+---
+title: "Who Gets You to the Gym?"
+subtitle: "Personal Social Networks and Gym Attendance among Graduate Students"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-fold: true
+    code-summary: "Show code"
+    theme: cosmo
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+pkgs <- c("tidyverse", "lme4", "lmerTest",
+          "car", "ggeffects", "janitor", "modelsummary",
+          "ergm")
+
+for (p in pkgs) {
+  if (!requireNamespace(p, quietly = TRUE))
+    install.packages(p, repos = "https://cloud.r-project.org", quiet = TRUE)
+  suppressPackageStartupMessages(library(p, character.only = TRUE))
+}
+
+data_dir <- "."
+
+rel_labels <- c("Close friend", "Casual friend", "Family member",
+                "Romantic partner", "Coworker/Classmate",
+                "Online-only friend", "Other")
+```
+
+# Background & Hypotheses
+
+Do the people around you shape how often you go to the gym? This study explores whether graduate students' gym attendance is influenced by **who they know** — the structure and composition of their personal networks — or whether individual motivation is all that matters.
+
+We draw on social support and social influence theories and test two competing explanations:
+
+> **H0 (Null):** Gym attendance is independent of who you know. Individual factors explain everything.
+>
+> **H1 (Alternative):** People with more exercise-active and supportive contacts go to the gym more often.
+
+------------------------------------------------------------------------
+
+# Data & Sample
+
+Data were collected using **Network Canvas** (v3.1.2), a tool designed for personal network interviews. Each participant:
+
+1.  Answered questions about their own gym habits and motivations
+2.  Named up to 15 people who influence their exercise life (across three prompts: gym partners, encouragers, and social media fitness contacts)
+3.  Rated each named person on several attributes
+4.  Indicated which of those people know each other
+
+This design — called an **egocentric network study** — lets us measure both the individual and their social environment simultaneously.
+
+```{r load-data}
+dataDirectoryPath <- data_dir
+
+alterData <- dataDirectoryPath |>
+  list.files(full.names = TRUE, pattern = "attributeList_Person.csv") |>
+  lapply(\(f) read.csv(f, colClasses = "character")) |>
+  bind_rows()
+
+edgelistData <- dataDirectoryPath |>
+  list.files(full.names = TRUE, pattern = "edgeList.*\\.csv") |>
+  lapply(\(f) read.csv(f, colClasses = "character")) |>
+  bind_rows() |>
+  filter(!is.na(networkCanvasSourceUUID), !is.na(networkCanvasTargetUUID))
+
+egoData <- dataDirectoryPath |>
+  list.files(full.names = TRUE, pattern = "ego.csv") |>
+  lapply(\(f) read_csv(f,
+                       col_types = cols(networkCanvasCaseID = col_character()),
+                       show_col_types = FALSE)) |>
+  bind_rows() |>
+  arrange(sessionStart) |>
+  mutate(
+    pid  = sprintf("P%02d", row_number()),
+    gender = factor(gender, 1:3, c("Male", "Female", "Other")),
+    gym_days          = as.numeric(ego_day_to_gym),
+    appearance_motiv  = as.numeric(ego_physical_app),
+    achievement_motiv = as.numeric(personal_archieve),
+    social_media_freq = as.numeric(ego_motivation_influence)
+  ) |>
+  select(networkCanvasEgoUUID, pid, gender,
+         gym_days, appearance_motiv, achievement_motiv, social_media_freq)
+
+alterData <- alterData |>
+  mutate(
+    across(c(ni_other_phy, ni_motivate, ni_interaction), as.numeric),
+    across(c(ni_relationship_1, ni_relationship_2, ni_relationship_3,
+             ni_relationship_4, ni_relationship_5, ni_relationship_6,
+             ni_relationship_7), as.logical),
+    rel_type = case_when(
+      ni_relationship_1 == TRUE ~ "Close friend",
+      ni_relationship_2 == TRUE ~ "Casual friend",
+      ni_relationship_3 == TRUE ~ "Family member",
+      ni_relationship_4 == TRUE ~ "Romantic partner",
+      ni_relationship_5 == TRUE ~ "Coworker/Classmate",
+      ni_relationship_6 == TRUE ~ "Online-only friend",
+      ni_relationship_7 == TRUE ~ "Other",
+      TRUE                      ~ "Unknown"
+    ),
+    rel_type      = factor(rel_type, c(rel_labels, "Unknown")),
+    alter_activity = ni_other_phy,
+    is_active      = as.integer(ni_other_phy >= 4),
+    motivate_score = ni_motivate,
+    interact_freq  = ni_interaction
+  ) |>
+  select(networkCanvasEgoUUID, networkCanvasUUID,
+         rel_type, alter_activity, is_active,
+         motivate_score, interact_freq)
+```
+
+------------------------------------------------------------------------
+
+# Statistical Models
+
+> **N = `r nrow(egoData)` participants, `r nrow(alterData)` named contacts.** All models are exploratory — interpret estimates descriptively, not causally.
+
+------------------------------------------------------------------------
+
+## Part A: What Predicts How Often Someone Goes to the Gym?
+
+We use **OLS regression** at the participant level with three nested models, adding network variables at each step to test whether social network characteristics predict gym attendance beyond individual factors.
+
+```{r ego-model-data}
+net_size_df <- alterData |>
+  group_by(networkCanvasEgoUUID) |>
+  summarise(net_size = n(), .groups = "drop")
+
+density_df <- edgelistData |>
+  count(networkCanvasEgoUUID, name = "actual_ties") |>
+  right_join(net_size_df, by = "networkCanvasEgoUUID") |>
+  mutate(
+    actual_ties   = replace_na(actual_ties, 0L),
+    possible_ties = net_size * (net_size - 1L) / 2,
+    density       = if_else(possible_ties > 0, actual_ties / possible_ties, NA_real_)
+  ) |>
+  select(networkCanvasEgoUUID, density)
+
+prop_active_df <- alterData |>
+  group_by(networkCanvasEgoUUID) |>
+  summarise(prop_active = mean(is_active, na.rm = TRUE), .groups = "drop")
+
+entropy_df <- alterData |>
+  filter(!is.na(rel_type), rel_type != "Unknown") |>
+  count(networkCanvasEgoUUID, rel_type) |>
+  group_by(networkCanvasEgoUUID) |>
+  mutate(p = n / sum(n)) |>
+  summarise(entropy = -sum(p * log(p)), .groups = "drop")
+
+ego_model_data <- egoData |>
+  left_join(net_size_df,    by = "networkCanvasEgoUUID") |>
+  left_join(density_df,     by = "networkCanvasEgoUUID") |>
+  left_join(prop_active_df, by = "networkCanvasEgoUUID") |>
+  left_join(entropy_df,     by = "networkCanvasEgoUUID") |>
+  mutate(prop_active = replace_na(prop_active, 0)) |>
+  filter(!is.na(gym_days))
+```
+
+### Model 1 — Individual Factors Only
+
+```{r m1}
+m1 <- lm(gym_days ~ gender + appearance_motiv + achievement_motiv,
+         data = ego_model_data)
+summary(m1)
+```
+
+M1 includes only individual-level variables. The overall model is marginally significant (F(3, 34) = 3.80, *p* = .019, R² = 0.25), but no individual predictor reaches conventional significance. Achievement motivation shows the largest effect (β = 0.62), suggesting that exercising for personal goals is associated with more gym days, though the effect is imprecisely estimated at this sample size.
+
+### Model 2 — Adding Network Structure
+
+```{r m2}
+m2 <- lm(gym_days ~ gender + appearance_motiv + achievement_motiv
+         + density + net_size,
+         data = ego_model_data)
+summary(m2)
+```
+
+Adding network density and size drops the sample to N = 28 (participants needing at least two alters for density to be defined) and the adjusted R² collapses to 0.04. Neither density (β = −0.59) nor network size (β = 0.08) is significant. Network structure adds no explanatory power over individual factors.
+
+### Model 3 — Adding Network Composition
+
+```{r m3}
+m3 <- lm(gym_days ~ gender + appearance_motiv + achievement_motiv
+         + density + net_size + prop_active + entropy,
+         data = ego_model_data)
+summary(m3)
+```
+
+Network composition variables also fail to reach significance. Notably, the proportion of active contacts carries a *negative* coefficient (β = −1.69), the opposite of H1, though far from significant. Adjusted R² remains at 0.05. Together, Parts A1–A3 provide no support for H1 at the ego level.
+
+### OLS Summary Table
+
+```{r ols-table}
+modelsummary(
+  list("M1: Individual" = m1, "M2: + Structure" = m2, "M3: + Composition" = m3),
+  stars   = c("*" = .1, "**" = .05, "***" = .01),
+  gof_map = c("nobs", "r.squared", "adj.r.squared"),
+  title   = "OLS Regression — Outcome: Gym days per week",
+  notes   = "Reference category: Female. Network variables in M2–M3 test H1."
+)
+```
+
+Across all three models, no predictor reaches conventional significance and model fit worsens as network variables are added. The evidence is consistent with **H0**: individual factors, not network characteristics in aggregate, drive gym attendance.
+
+------------------------------------------------------------------------
+
+## Part B: What Makes a Contact a Good Motivator?
+
+Rather than asking who goes to the gym more, we now ask which contacts provide the most motivation to exercise. The outcome is `motivate_score` (1–5). Because contacts are nested within participants, we use **random-intercept multilevel models**.
+
+```{r merged-data}
+merged_data <- egoData |>
+  inner_join(alterData, by = "networkCanvasEgoUUID") |>
+  mutate(motivate_score = na_if(motivate_score, -1))
+```
+
+### Model 1 (Null) — Partitioning Variance
+
+```{r mlm-null}
+model1 <- lmer(motivate_score ~ (1 | networkCanvasEgoUUID),
+               data = merged_data)
+summary(model1)
+```
+
+```{r icc-text}
+#| include: false
+vc  <- as.data.frame(VarCorr(model1))
+icc <- round(vc$vcov[1] / sum(vc$vcov), 3)
+```
+
+ICC = **`r icc`** (`r scales::percent(icc)`). About 29% of the variance in motivation scores is attributable to which participant was interviewed; the remaining 71% reflects differences *between contacts within the same person*. This within-person variance is large enough to justify modeling contact-level predictors.
+
+------------------------------------------------------------------------
+
+### Model 2 — Contact-Level Predictors
+
+```{r mlm-alter}
+model2 <- lmer(motivate_score ~ is_active + interact_freq
+               + (1 | networkCanvasEgoUUID),
+               data = merged_data)
+summary(model2)
+```
+
+Both contact-level predictors are highly significant. Being rated as exercise-active (score ≥ 4) is associated with a **0.76-point higher motivation score** (β = 0.76, *p* \< .001) — a meaningful shift on a 1–5 scale. More frequent interaction also predicts higher motivation (β = 0.18, *p* = .002). Adding these two predictors reduces the between-person variance by more than half (from 0.336 to 0.159), suggesting that who participants name largely drives the between-person variation seen in the null model.
+
+### Model 3 — Adding Participant-Level Controls
+
+```{r mlm-full}
+model3 <- lmer(motivate_score ~ is_active + interact_freq
+               + gym_days + gender
+               + (1 | networkCanvasEgoUUID),
+               data = merged_data)
+summary(model3)
+```
+
+After controlling for the participant's own gym frequency and gender, the `is_active` effect **grows to β = 0.84** (*p* \< .001) and `interact_freq` remains significant (β = 0.14, *p* = .017). Neither `gym_days` nor `gender` reaches significance, ruling out the simplest selection story — the contact's own activity level, not the participant's habits or demographics, is what drives motivational value.
+
+### Predicted Motivation by Contact Activity Level
+
+```{r ggpredict-active}
+#| fig-height: 4
+ggpredict(model3, "is_active") |>
+  plot() +
+  labs(title = "Predicted motivation score: active vs. less active contacts",
+       subtitle = "Based on Model 3; shaded area = 95% confidence interval",
+       x = "Contact is exercise-active (0 = No, 1 = Yes)",
+       y = "Predicted motivation score (1–5)") +
+  theme_classic()
+```
+
+The predicted motivation score is approximately **0.84 points higher** for exercise-active contacts, holding interaction frequency, participant gym frequency, and gender constant. The confidence intervals for the two groups do not overlap, indicating a robust and practically meaningful difference.
+
+------------------------------------------------------------------------
+
+# ERGM — Do Active Alters Cluster Together?
+
+The multilevel models treat each alter independently. An ERGM asks a structurally different question: **does the pattern of ties *among* alters itself carry signal** — specifically, do exercise-active contacts tend to know each other, or do similarly active people cluster together?
+
+We pool all alter-alter edges across ego networks into a single undirected network and fit ERGMs with each alter's physical activity rating (1–5) as a vertex attribute.
+
+```{r ergm-build}
+alters_ergm <- alterData |> filter(!is.na(alter_activity))
+
+valid_uuids <- alters_ergm$networkCanvasUUID
+edges_ergm  <- edgelistData |>
+  filter(networkCanvasSourceUUID %in% valid_uuids,
+         networkCanvasTargetUUID  %in% valid_uuids)
+
+v_idx    <- setNames(seq_len(nrow(alters_ergm)), alters_ergm$networkCanvasUUID)
+edge_src <- v_idx[edges_ergm$networkCanvasSourceUUID]
+edge_tgt <- v_idx[edges_ergm$networkCanvasTargetUUID]
+ok       <- !is.na(edge_src) & !is.na(edge_tgt)
+
+net_pool <- network.initialize(nrow(alters_ergm), directed = FALSE)
+network::add.edges(net_pool, edge_src[ok], edge_tgt[ok])
+network::set.vertex.attribute(net_pool, "alter_activity", alters_ergm$alter_activity)
+```
+
+### Model 1 — Baseline Density
+
+```{r ergm1}
+ergm1 <- ergm(net_pool ~ edges)
+summary(ergm1)
+```
+
+The baseline log-odds of a tie is −3.44, implying a network density of roughly 3%. This is expected: most pairs of contacts across different ego networks share no direct connection.
+
+### Model 2 — Activity as a Node Covariate
+
+```{r ergm2}
+ergm2 <- ergm(net_pool ~ edges + nodecov("alter_activity"))
+summary(ergm2)
+```
+
+`nodecov` captures the total activity level of a dyad. Its negative coefficient (β = −0.24, *p* \< .001) indicates that, unconditionally, pairs where both alters are highly active are *less* likely to be tied than chance would suggest. AIC drops from 1854 to 1822, confirming improved fit, but the direction hints that high activity alone does not predict connection — something about similarity may matter more.
+
+### Model 3 — Activity Homophily
+
+```{r ergm3}
+ergm3 <- ergm(net_pool ~ edges + nodecov("alter_activity") + absdiff("alter_activity"))
+summary(ergm3)
+```
+
+Adding `absdiff` — the absolute difference in activity levels between a pair — substantially improves fit (AIC: 1763). Its negative coefficient (β = −0.58, *p* \< .001) confirms **activity homophily**: alters with *similar* activity levels are significantly more likely to know each other. The `nodecov` term remains negative, suggesting that once homophily is accounted for, raw activity level *per se* does not increase connectivity. Together, Model 3 shows that exercise-active contacts tend to cluster with other similarly active people — a structural pattern that may reinforce the motivational effects observed in Part B.
+
+------------------------------------------------------------------------
+
+# Discussion
+
+This study examined whether personal social networks shape gym attendance among graduate students, using ego-centric network data collected via Network Canvas.
+
+At the **participant level** (Part A), no network variable — density, size, proportion of active contacts, or relationship diversity — significantly predicted weekly gym frequency. Individual achievement motivation was the strongest predictor (β = 0.62), though it did not reach significance in this small sample. The evidence across all three OLS models is consistent with **H0**: who you know in the aggregate does not determine how often you work out.
+
+At the **contact level** (Part B), a consistent and robust pattern emerged. Contacts rated as highly physically active provided significantly stronger motivation to exercise (β = 0.84, *p* \< .001, Model 3), and this effect *strengthened* after accounting for participant characteristics — ruling out a straightforward selection explanation. Interaction frequency also contributed (β = 0.14, *p* = .017), though its effect was smaller. Exercise support appears to be a **dyadic phenomenon**: it depends on the specific relationship rather than the overall composition of one's network.
+
+The **ERGM results** (Part C) add a structural layer: exercise-active alters tend to cluster with similarly active contacts (absdiff β = −0.58, *p* \< .001), forming homophilic micro-clusters within ego networks. This structural tendency may amplify the contact-level motivational effects — being embedded among similarly active people could reinforce exercise norms through repeated, mutual exposure.
+
+**Limitations:** Small sample (N = `r nrow(egoData)`), cross-sectional design, and the constraints of egocentric data — which cannot distinguish social influence from selection, nor fully capture the ego's broader network context.

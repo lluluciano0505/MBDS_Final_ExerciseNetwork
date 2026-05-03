@@ -1,0 +1,4 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,e20c7ba7-f37b-45ef-baf6-08fa08e33101,15c042ff-07cc-4276-afad-64ee2cb65dfc,,,,,,false,false,false,false,false,false,true,,,,,,,,,,no
+2,e20c7ba7-f37b-45ef-baf6-08fa08e33101,3c7b79a5-9c8c-4e7b-bdc0-702828cc8b9f,,,,,,true,false,false,false,false,false,false,,,,,,,3,,,"Dai, Fang"
+3,e20c7ba7-f37b-45ef-baf6-08fa08e33101,a10766a7-62a1-481e-8a28-b7de3131c0ff,,,,,,true,false,false,false,false,false,false,,,,,,,3,,,"Dai, Fang"

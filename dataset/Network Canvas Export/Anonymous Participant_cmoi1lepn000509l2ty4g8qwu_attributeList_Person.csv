@@ -1,0 +1,6 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,0ac7bf5b-2b5f-489f-8cff-5bc6a223467a,f67743ed-641f-4744-9b76-547a983b2e01,,,4,,3,true,false,false,false,false,false,false,,,2,,,,3,,,许
+2,0ac7bf5b-2b5f-489f-8cff-5bc6a223467a,3c685d73-c2bf-40e3-87c5-2b01f9db3548,,,3,,3,true,false,false,false,false,false,false,,,2,,,,2,,,张
+3,0ac7bf5b-2b5f-489f-8cff-5bc6a223467a,03d0b8d0-c1ad-4b9f-b51c-256dfa321a65,,,2,,2,true,false,false,false,false,false,false,,,2,,,,3,,,杨
+4,0ac7bf5b-2b5f-489f-8cff-5bc6a223467a,240eb881-f689-4902-8dc0-bb7bf9fab98d,,,1,,1,true,false,false,false,false,false,false,,,2,,,,3,,,安
+5,0ac7bf5b-2b5f-489f-8cff-5bc6a223467a,a79a4588-778c-48cd-9020-d9a34d48a944,,,1,,1,true,false,false,false,false,false,false,,,2,,,,1,,,梁

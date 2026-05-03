@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,009bba9e-564f-4c08-a612-b0694057182d,8ab8cdea-942a-4c33-8066-ad3f248bad2e,,,4,,3,false,false,false,false,true,false,false,,,2,,,,3,,,Smith
+2,009bba9e-564f-4c08-a612-b0694057182d,6f63a41f-016f-4594-ae5f-018f8a5a4ec5,,,4,,2,false,true,false,false,false,false,false,,,2,,,,1,,,Leonard
+3,009bba9e-564f-4c08-a612-b0694057182d,1bd3023c-3090-4442-b081-9758d9eb4838,,,5,,3,false,false,false,false,false,false,true,,,1,,,,,,,George Russell
+4,009bba9e-564f-4c08-a612-b0694057182d,a98d4c6d-3ff3-4b0d-9b97-979d824a8cc1,,,4,,2,false,false,false,false,false,true,false,,,1,,,,0,,,Joey Gore

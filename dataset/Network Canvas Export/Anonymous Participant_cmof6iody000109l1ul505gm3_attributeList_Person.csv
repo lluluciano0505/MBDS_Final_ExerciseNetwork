@@ -1,0 +1,16 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,2e2396d2-dc40-48fc-b253-0d2a36961e21,551f5888-5943-477f-8b50-aeea4e62f785,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,isabelle
+2,2e2396d2-dc40-48fc-b253-0d2a36961e21,681ae33e-f63c-4e74-b7d6-b90b0343a089,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,luch
+3,2e2396d2-dc40-48fc-b253-0d2a36961e21,1930caa6-9c3c-4149-8945-439a91bc14b0,,,,,,true,false,false,false,true,false,false,,,,,,,1,,,jinyangxu
+4,2e2396d2-dc40-48fc-b253-0d2a36961e21,1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,zichengxiang
+5,2e2396d2-dc40-48fc-b253-0d2a36961e21,0c3b698b-2683-4490-8d45-b855b55e48c4,,,,,,false,true,false,false,true,false,false,,,,,,,1,,,david
+6,2e2396d2-dc40-48fc-b253-0d2a36961e21,b711c948-cffe-42a2-bd2b-846d51eaf803,,,,,,true,false,false,false,true,false,false,,,,,,,4,,,tang
+7,2e2396d2-dc40-48fc-b253-0d2a36961e21,5c1ce1ed-8af8-4356-a27a-47ac277ba794,,,,,,true,false,false,false,true,false,false,,,,,,,4,,,zheng
+8,2e2396d2-dc40-48fc-b253-0d2a36961e21,98980c32-6129-428d-9e87-11d8b81d8551,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,isabelle
+9,2e2396d2-dc40-48fc-b253-0d2a36961e21,9468ffd1-a1af-4314-beab-effad4d5568f,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,luch
+10,2e2396d2-dc40-48fc-b253-0d2a36961e21,5d200d21-a825-40e5-8254-e372fac13288,,,,,,true,false,false,false,true,false,false,,,,,,,4,,,christine
+11,2e2396d2-dc40-48fc-b253-0d2a36961e21,59a490c2-3aff-4917-b101-36e85aa3f326,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,isabelle
+12,2e2396d2-dc40-48fc-b253-0d2a36961e21,3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,luch
+13,2e2396d2-dc40-48fc-b253-0d2a36961e21,1df9f68c-3f9a-407c-ae4d-a9ad2a43013c,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,zicheng
+14,2e2396d2-dc40-48fc-b253-0d2a36961e21,de0c6fb0-2cce-4820-8bbc-ff0538e739bd,,,,,,true,false,false,false,true,false,false,,,,,,,5,,,sihan
+15,2e2396d2-dc40-48fc-b253-0d2a36961e21,cd9ba578-340c-43cd-a739-1c9c194c9d60,,,,,,true,false,false,false,true,false,false,,,,,,,4,,,christine

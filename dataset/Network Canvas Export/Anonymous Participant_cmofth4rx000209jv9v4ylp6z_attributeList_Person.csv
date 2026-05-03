@@ -1,0 +1,4 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,ff96213c-6f04-4114-81dd-59425be17ee8,b632fc86-efcd-46c8-a975-f2ca02c705e2,,,2,,1,true,false,false,false,false,false,false,,,2,,,,5,,,J
+2,ff96213c-6f04-4114-81dd-59425be17ee8,762bb0ca-f0e8-4a05-8c44-95401e88025a,,,3,,,true,false,false,false,false,false,false,,,2,,,,3,,,E
+3,ff96213c-6f04-4114-81dd-59425be17ee8,217066a0-e9ac-479a-bf24-5d44394acab0,,,3,,5,false,false,true,false,false,false,false,,,2,,,,4,,,Q

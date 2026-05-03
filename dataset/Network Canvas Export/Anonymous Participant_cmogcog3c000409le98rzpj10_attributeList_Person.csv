@@ -1,0 +1,5 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,1754624d-66d5-4fd4-b40d-60b95200bdf9,16b44bcd-7321-4dde-9543-58ec8c85718c,,,3,,3,false,false,false,false,false,false,true,,,2,,,,5,,,Just Myself
+2,1754624d-66d5-4fd4-b40d-60b95200bdf9,e9e93785-b5cd-4d90-9b13-2c5206444873,,,3,,4,false,false,false,true,false,false,false,,,2,,,,5,,,My boyfriend
+3,1754624d-66d5-4fd4-b40d-60b95200bdf9,dbee2cec-a74a-4818-9a2b-ccee31920990,,,5,,4,false,false,false,false,false,false,true,,,2,,,,1,,,My gym coach
+4,1754624d-66d5-4fd4-b40d-60b95200bdf9,b387d686-8c9f-4e46-8962-907497ceee24,,,5,,4,false,false,false,false,false,false,true,,,2,,,,1,,,My gym coach

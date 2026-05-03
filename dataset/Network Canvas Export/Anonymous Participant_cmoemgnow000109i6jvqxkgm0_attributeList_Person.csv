@@ -1,0 +1,12 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,4ca84577-d4a8-4928-a784-a4d376d65c92,822818bb-2622-4a32-a8ac-6f8eab29dfa2,,,3,,3,true,false,false,false,false,false,false,,,2,,,,2,,,li
+2,4ca84577-d4a8-4928-a784-a4d376d65c92,466754b3-4a6f-4d40-b0e5-0ee8a4463947,,,3,,3,true,true,false,true,false,false,false,,,2,,,,2,,,wang
+3,4ca84577-d4a8-4928-a784-a4d376d65c92,e7a9e16f-9de7-427f-9eb7-c108a4b06374,,,3,,3,false,true,false,false,false,false,false,,,2,,,,2,,,chen
+4,4ca84577-d4a8-4928-a784-a4d376d65c92,09c5807a-1ec9-499c-bd86-51e35c9faf78,,,3,,3,false,false,true,false,false,false,false,,,2,,,,2,,,yang
+5,4ca84577-d4a8-4928-a784-a4d376d65c92,9de390ad-ef07-4735-81ae-dedac463de47,,,3,,3,false,false,true,false,false,false,false,,,2,,,,2,,,chen
+6,4ca84577-d4a8-4928-a784-a4d376d65c92,0436493e-e8c8-4753-9ec6-67535f641f34,,,3,,3,false,false,true,false,false,false,false,,,2,,,,2,,,liu
+7,4ca84577-d4a8-4928-a784-a4d376d65c92,1525c284-e7bd-403d-8975-6f6b1d3b1acf,,,4,,4,false,false,true,false,false,false,false,,,2,,,,2,,,lin
+8,4ca84577-d4a8-4928-a784-a4d376d65c92,ebdcd1d7-9db2-45b1-81ac-35d9e77c0191,,,4,,4,false,false,false,true,false,false,false,,,2,,,,5,,,shi
+9,4ca84577-d4a8-4928-a784-a4d376d65c92,0ccc683b-c080-414f-9946-3f45d58287c6,,,4,,4,false,false,false,true,false,false,false,,,2,,,,4,,,shi
+10,4ca84577-d4a8-4928-a784-a4d376d65c92,1bcc59f3-14fd-454a-9728-51f1414f2f90,,,4,,4,false,false,false,false,true,false,false,,,2,,,,4,,,zhu
+11,4ca84577-d4a8-4928-a784-a4d376d65c92,f36ea16e-d3cc-455e-b3e7-71a7356b9a92,,,4,,4,false,false,false,true,false,false,false,,,2,,,,4,,,wang

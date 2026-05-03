@@ -1,0 +1,11 @@
+nodeID,networkCanvasEgoUUID,networkCanvasUUID,fre_person,ni_relationship_direction,ni_other_phy,ni_rate_influence,ni_motivate,ni_relationship_1,ni_relationship_2,ni_relationship_3,ni_relationship_4,ni_relationship_5,ni_relationship_6,ni_relationship_7,topic_person,motive_person,ni_talk,ni_exercise_freq,ni,ni_often_30d,ni_interaction,relationship,active_person,name
+1,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,d8a52063-0791-4dc4-9e52-5d60d99cbc80,,,4,,4,true,false,false,false,false,false,false,,,2,,,,3,,,Hastings
+2,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,06f2059c-151d-4a2d-9d1b-78d0199fae70,,,4,,3,false,true,false,false,false,false,false,,,2,,,,3,,,Brown
+3,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,ed0aaf07-0f8f-4297-8bfb-5f971c1581c0,,,2,,4,false,false,false,false,false,true,false,,,2,,,,2,,,Quine
+4,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,7fb58b7f-96d4-4695-b2a6-fecf65a07c9d,,,3,,3,false,false,false,false,false,true,false,,,2,,,,2,,,Dubin
+5,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,7792f796-5e44-447e-aec0-0e78cf67a68c,,,3,,3,false,false,false,false,false,true,false,,,2,,,,3,,,Charles
+6,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,69ca2901-a40f-4780-8bb6-365ab2986133,,,5,,3,true,false,false,false,false,false,false,,,2,,,,5,,,Hastings
+7,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,75b569bf-f31e-4a01-a1bb-d5138314d806,,,4,,3,false,false,false,false,false,false,true,,,1,,,,2,,,Gin
+8,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,ecbcc473-5344-44e1-a253-d6c5b035215f,,,5,,2,false,false,false,false,false,false,true,,,1,,,,4,,,Zed
+9,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,d007ebbc-698f-4f31-a470-344cfe72c6a1,,,4,,4,false,false,false,false,false,false,true,,,1,,,,4,,,Jax
+10,9eb1c7aa-7bc3-4ecf-af4e-63f240b438eb,4f82cf67-cca0-44f6-a0d6-920f7203177e,,,3,,3,false,false,false,false,false,false,true,,,2,,,,3,,,marx

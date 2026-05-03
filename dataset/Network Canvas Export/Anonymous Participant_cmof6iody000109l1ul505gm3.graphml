@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <graphml
+    xmlns="http://graphml.graphdrawing.org/xmlns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+    http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"
+    xmlns:nc="http://schema.networkcanvas.com/xmlns">
+<key id="0be83a17-696e-4b1c-b29d-0a3db8256db7" attr.name="gender" attr.type="int" for="graph"/>
+<key id="2d684444-1dba-4e41-8c64-52dde6fd5adc" attr.name="ego_physical_app" attr.type="int" for="graph"/>
+<key id="431ee483-19b1-41ce-9a9f-ad6bd88bef0d" attr.name="comparison" attr.type="string" for="graph"/>
+<key id="5a50bc0f-fa08-40c3-bbba-e0dad8d684ae" attr.name="name" attr.type="string" for="graph"/>
+<key id="65dbf7a4-84fc-4a29-b242-65b1909e02c4" attr.name="physical_appearance" attr.type="string" for="graph"/>
+<key id="6eca5df0-81ac-43f8-b747-d8090a8b66c5_356a192b7913b04c54574d18c28d46e6395428ab" attr.name="fav_exercise_type_1" attr.type="boolean" for="graph"/>
+<key id="6eca5df0-81ac-43f8-b747-d8090a8b66c5_da4b9237bacccdf19c0760cab7aec4a8359010b0" attr.name="fav_exercise_type_2" attr.type="boolean" for="graph"/>
+<key id="6eca5df0-81ac-43f8-b747-d8090a8b66c5_77de68daecd823babbb58edb1c8e14d7106e83bb" attr.name="fav_exercise_type_3" attr.type="boolean" for="graph"/>
+<key id="6eca5df0-81ac-43f8-b747-d8090a8b66c5_1b6453892473a467d07372d45eb05abc2031647a" attr.name="fav_exercise_type_4" attr.type="boolean" for="graph"/>
+<key id="6eca5df0-81ac-43f8-b747-d8090a8b66c5_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4" attr.name="fav_exercise_type_5" attr.type="boolean" for="graph"/>
+<key id="895711ee-4c45-4722-887f-e24f0353f4aa" attr.name="ego_motivation_influence" attr.type="int" for="graph"/>
+<key id="8a6e03fc-f7b9-417b-babb-bc6c86077cfb" attr.name="ego" attr.type="string" for="graph"/>
+<key id="8bf5a36c-3b44-49fc-8afc-50f77f8e2d0e" attr.name="Nationality" attr.type="string" for="graph"/>
+<key id="997b070a-dd32-4e68-821c-bbb33cb7c078" attr.name="personal_archieve" attr.type="int" for="graph"/>
+<key id="c0bee617-8e04-44f2-9162-229f40bca362" attr.name="ego_motivation_other" attr.type="string" for="graph"/>
+<key id="c80c073c-cb7d-42ab-bf32-cbeb835bca35" attr.name="consent" attr.type="boolean" for="graph"/>
+<key id="c8a5e0fd-0853-485d-9b13-58934822f432" attr.name="ego_day_to_gym" attr.type="int" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_b6589fc6ab0dc82cf12099d1c2d40ab994e8410c" attr.name="ego_exercise_7_0" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_356a192b7913b04c54574d18c28d46e6395428ab" attr.name="ego_exercise_7_1" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_da4b9237bacccdf19c0760cab7aec4a8359010b0" attr.name="ego_exercise_7_2" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_77de68daecd823babbb58edb1c8e14d7106e83bb" attr.name="ego_exercise_7_3" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_1b6453892473a467d07372d45eb05abc2031647a" attr.name="ego_exercise_7_4" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4" attr.name="ego_exercise_7_5" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_c1dfd96eea8cc2b62785275bca38ac261256e278" attr.name="ego_exercise_7_6" attr.type="boolean" for="graph"/>
+<key id="ee54889f-37d5-48a8-9099-65fa79f13dce_902ba3cda1883801594b6e1b452790cc53948fda" attr.name="ego_exercise_7_7" attr.type="boolean" for="graph"/>
+<key id="fd36abec-f324-4cd0-9c8e-7d38fcb34b8e" attr.name="ego_exercise_7d" attr.type="string" for="graph"/>
+<key id="label" attr.name="label" attr.type="string" for="all"/>
+<key id="networkCanvasType" attr.name="networkCanvasType" attr.type="string" for="all"/>
+<key id="networkCanvasUUID" attr.name="networkCanvasUUID" attr.type="string" for="all"/>
+<key id="06cd1e17-ddc3-473b-a6f3-1d005c83e01c" attr.name="fre_person" attr.type="string" for="node"/>
+<key id="0f170582-226d-457f-bdfa-cb004fa9df71" attr.name="ni_relationship_direction" attr.type="string" for="node"/>
+<key id="2ae7a387-12b0-483a-a705-93e4312846b9" attr.name="ni_other_phy" attr.type="string" for="node"/>
+<key id="334c02a1-49c0-4548-921f-53a5661c23a1" attr.name="ni_rate_influence" attr.type="string" for="node"/>
+<key id="403a0957-4d22-4240-ba53-d7b2c447fef2" attr.name="ni_motivate" attr.type="string" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab" attr.name="ni_relationship_1" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0" attr.name="ni_relationship_2" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb" attr.name="ni_relationship_3" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a" attr.name="ni_relationship_4" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4" attr.name="ni_relationship_5" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278" attr.name="ni_relationship_6" attr.type="boolean" for="node"/>
+<key id="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda" attr.name="ni_relationship_7" attr.type="boolean" for="node"/>
+<key id="4a40b9ea-0fcc-4385-8f8c-e8ff7f1ac4c4" attr.name="topic_person" attr.type="string" for="node"/>
+<key id="4ab8c01c-6c08-471f-b4ed-4c107b7e99cc" attr.name="motive_person" attr.type="string" for="node"/>
+<key id="5c078518-caf6-439f-ac2e-6d4a1711011e" attr.name="ni_talk" attr.type="string" for="node"/>
+<key id="73a5c0dd-e62e-425c-a92c-2ddbbb42f15f" attr.name="ni_exercise_freq" attr.type="string" for="node"/>
+<key id="83d1f125-d83c-48c8-a431-ab2d16b8012f" attr.name="ni" attr.type="string" for="node"/>
+<key id="a8ec3b56-776b-42c1-8d5d-13367422e481" attr.name="ni_often_30d" attr.type="string" for="node"/>
+<key id="b5666650-234f-410f-96c9-07696e8cc60e" attr.name="ni_interaction" attr.type="int" for="node"/>
+<key id="cf1f5331-20d3-4733-8a57-c74d9cbe05cd" attr.name="relationship" attr.type="string" for="node"/>
+<key id="d88d7913-af9e-4c5f-94e4-75b95f06fe05" attr.name="active_person" attr.type="string" for="node"/>
+<key id="f19ed8ff-b51c-4de8-bb71-d175c73082db" attr.name="name" attr.type="string" for="node"/>
+<key id="networkCanvasTargetUUID" attr.name="networkCanvasTargetUUID" attr.type="string" for="edge"/>
+<key id="networkCanvasSourceUUID" attr.name="networkCanvasSourceUUID" attr.type="string" for="edge"/>
+<graph
+  edgedefault="undirected"
+  nc:caseId="Anonymous Participant"
+  nc:sessionUUID="cmof6iody000109l1ul505gm3"
+  nc:protocolName="Gym.netcanvas"
+  nc:protocolUID="VAbp9TlyAM1LI3EvPpu82VK7ErohMmnuzP3ZrGReqQE"
+  nc:codebookHash="87deGQ4CzPJh9hrimY0Ki2FMPPzBJg3RaGBbCYAI43I"
+  nc:sessionExportTime="2026-04-28T16:42:36.406Z"
+    nc:sessionStartTime="2026-04-26T02:58:47.580Z"
+    nc:sessionFinishTime="2026-04-26T03:11:48.059Z"
+>
+<data key="networkCanvasUUID">2e2396d2-dc40-48fc-b253-0d2a36961e21</data>
+<data key="0be83a17-696e-4b1c-b29d-0a3db8256db7">2</data>
+<data key="2d684444-1dba-4e41-8c64-52dde6fd5adc">5</data>
+<data key="5a50bc0f-fa08-40c3-bbba-e0dad8d684ae">chen</data>
+<data key="6eca5df0-81ac-43f8-b747-d8090a8b66c5_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+<data key="6eca5df0-81ac-43f8-b747-d8090a8b66c5_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+<data key="6eca5df0-81ac-43f8-b747-d8090a8b66c5_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+<data key="6eca5df0-81ac-43f8-b747-d8090a8b66c5_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+<data key="6eca5df0-81ac-43f8-b747-d8090a8b66c5_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">false</data>
+<data key="895711ee-4c45-4722-887f-e24f0353f4aa">4</data>
+<data key="8bf5a36c-3b44-49fc-8afc-50f77f8e2d0e">China</data>
+<data key="997b070a-dd32-4e68-821c-bbb33cb7c078">4</data>
+<data key="c80c073c-cb7d-42ab-bf32-cbeb835bca35">true</data>
+<data key="c8a5e0fd-0853-485d-9b13-58934822f432">6</data>
+<node id="1">
+	<data key="networkCanvasUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">isabelle</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">isabelle</data>
+</node>
+<node id="2">
+	<data key="networkCanvasUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">luch</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">luch</data>
+</node>
+<node id="3">
+	<data key="networkCanvasUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">jinyangxu</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">1</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">jinyangxu</data>
+</node>
+<node id="4">
+	<data key="networkCanvasUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">zichengxiang</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">zichengxiang</data>
+</node>
+<node id="5">
+	<data key="networkCanvasUUID">0c3b698b-2683-4490-8d45-b855b55e48c4</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">david</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">1</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">david</data>
+</node>
+<node id="6">
+	<data key="networkCanvasUUID">b711c948-cffe-42a2-bd2b-846d51eaf803</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">tang</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">4</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">tang</data>
+</node>
+<node id="7">
+	<data key="networkCanvasUUID">5c1ce1ed-8af8-4356-a27a-47ac277ba794</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">zheng</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">4</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">zheng</data>
+</node>
+<node id="8">
+	<data key="networkCanvasUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">isabelle</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">isabelle</data>
+</node>
+<node id="9">
+	<data key="networkCanvasUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">luch</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">luch</data>
+</node>
+<node id="10">
+	<data key="networkCanvasUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">christine</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">4</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">christine</data>
+</node>
+<node id="11">
+	<data key="networkCanvasUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">isabelle</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">isabelle</data>
+</node>
+<node id="12">
+	<data key="networkCanvasUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">luch</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">luch</data>
+</node>
+<node id="13">
+	<data key="networkCanvasUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">zicheng</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">zicheng</data>
+</node>
+<node id="14">
+	<data key="networkCanvasUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">sihan</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">5</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">sihan</data>
+</node>
+<node id="15">
+	<data key="networkCanvasUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+	<data key="networkCanvasType">Person</data>
+	<data key="label">christine</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_356a192b7913b04c54574d18c28d46e6395428ab">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_da4b9237bacccdf19c0760cab7aec4a8359010b0">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_77de68daecd823babbb58edb1c8e14d7106e83bb">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_1b6453892473a467d07372d45eb05abc2031647a">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4">true</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_c1dfd96eea8cc2b62785275bca38ac261256e278">false</data>
+	<data key="48ccc8ac-fa33-4eed-ae71-ad67f6551698_902ba3cda1883801594b6e1b452790cc53948fda">false</data>
+	<data key="b5666650-234f-410f-96c9-07696e8cc60e">4</data>
+	<data key="f19ed8ff-b51c-4de8-bb71-d175c73082db">christine</data>
+</node>
+<edge id="1" source="1" target="2">
+	<data key="networkCanvasUUID">84ce72d6-21d3-4e4c-afee-2b0db12011d1</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+</edge>
+<edge id="2" source="1" target="3">
+	<data key="networkCanvasUUID">4900ddd8-eb7f-47ce-b7f2-adb6104bfb16</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+</edge>
+<edge id="3" source="1" target="4">
+	<data key="networkCanvasUUID">a4bbcb9a-4e38-49fc-9975-6512c6988b3c</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+</edge>
+<edge id="4" source="1" target="8">
+	<data key="networkCanvasUUID">9a81ffde-98cf-45b1-91ad-9cf5eadeb866</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+</edge>
+<edge id="5" source="1" target="9">
+	<data key="networkCanvasUUID">907d96ae-8ec0-48bb-8e67-5d289893238e</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+</edge>
+<edge id="6" source="1" target="10">
+	<data key="networkCanvasUUID">dd4a5ee8-3c4c-4c93-9599-01e3fa4992ea</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="7" source="1" target="11">
+	<data key="networkCanvasUUID">c547e777-6c51-4e01-8d09-cf28cec8d5e6</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="8" source="1" target="12">
+	<data key="networkCanvasUUID">6f45d7fe-d28a-4ebf-9177-85b2d7383366</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="9" source="1" target="13">
+	<data key="networkCanvasUUID">ef74caa1-1285-44b8-b3e1-2099bfd1592f</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="10" source="1" target="14">
+	<data key="networkCanvasUUID">4369518c-8efb-4d57-afa5-43a28fbf3ec3</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="11" source="1" target="15">
+	<data key="networkCanvasUUID">1852a471-0f59-45ed-84dc-1b2da5d40d30</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">551f5888-5943-477f-8b50-aeea4e62f785</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="12" source="2" target="3">
+	<data key="networkCanvasUUID">182f4d56-d5c8-45fe-b9a7-b097e34bf258</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+</edge>
+<edge id="13" source="2" target="10">
+	<data key="networkCanvasUUID">161a8414-fd57-4a56-a3b7-345139811cde</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="14" source="2" target="11">
+	<data key="networkCanvasUUID">cf6ecc45-02be-4677-aab7-e0d0d048fae8</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="15" source="2" target="12">
+	<data key="networkCanvasUUID">31a87c59-82a4-4083-a02d-bac3504dd6dc</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="16" source="2" target="13">
+	<data key="networkCanvasUUID">df073911-3979-4b16-87d8-abf08cfb3703</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="17" source="2" target="14">
+	<data key="networkCanvasUUID">e6b9548f-cca5-45d2-9c6a-50e394eced10</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="18" source="2" target="15">
+	<data key="networkCanvasUUID">87d33eff-b520-4250-95af-db159a022cb6</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">681ae33e-f63c-4e74-b7d6-b90b0343a089</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="19" source="3" target="4">
+	<data key="networkCanvasUUID">e000f92e-8230-4787-a52a-5516f46823aa</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+</edge>
+<edge id="20" source="3" target="8">
+	<data key="networkCanvasUUID">f1e1a035-d961-421b-b079-e72985c945db</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+</edge>
+<edge id="21" source="3" target="9">
+	<data key="networkCanvasUUID">42c3c559-77de-46fd-9afb-e760a9304474</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+</edge>
+<edge id="22" source="3" target="10">
+	<data key="networkCanvasUUID">4e465019-2ee4-4b26-9929-cc7a92479ab5</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="23" source="3" target="11">
+	<data key="networkCanvasUUID">1ca2c5c6-1cd8-485e-85fc-32cd82caa239</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="24" source="3" target="12">
+	<data key="networkCanvasUUID">227e33f3-55b4-41ce-8c8b-6b3986fcb238</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="25" source="3" target="13">
+	<data key="networkCanvasUUID">d5c15eae-4375-45aa-8a76-092e47c90c75</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="26" source="3" target="14">
+	<data key="networkCanvasUUID">f557de92-76f2-4286-8f56-54e5b17bc4e7</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="27" source="3" target="15">
+	<data key="networkCanvasUUID">ce2b6b49-b73d-4ba8-8492-e24209bd2b0b</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1930caa6-9c3c-4149-8945-439a91bc14b0</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="28" source="4" target="5">
+	<data key="networkCanvasUUID">8390f99c-c765-49d1-b57d-05c67b32ec49</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">0c3b698b-2683-4490-8d45-b855b55e48c4</data>
+</edge>
+<edge id="29" source="4" target="8">
+	<data key="networkCanvasUUID">0aefd8a9-8807-4dd4-bac6-82701c834893</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+</edge>
+<edge id="30" source="4" target="9">
+	<data key="networkCanvasUUID">59bdcaef-c298-4eb3-a7e1-346106d50953</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+</edge>
+<edge id="31" source="4" target="10">
+	<data key="networkCanvasUUID">46f988d5-4ec7-4866-9e85-ab8cb2292cb8</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="32" source="4" target="11">
+	<data key="networkCanvasUUID">b92f77ea-9d8e-4c51-acb6-209ebeef2345</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="33" source="4" target="12">
+	<data key="networkCanvasUUID">732fab94-fe5a-4b59-a838-6d1b317a7b25</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="34" source="4" target="13">
+	<data key="networkCanvasUUID">6358033e-2233-448e-adf9-89390ba08eac</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="35" source="4" target="14">
+	<data key="networkCanvasUUID">69af7fc1-3ce9-4088-a43d-0663f081b18e</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="36" source="4" target="15">
+	<data key="networkCanvasUUID">1c20aef2-5e22-4159-947a-1217e9be7f00</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1edc2f52-bf7a-4c2f-9bb6-a06a6b00236e</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="37" source="6" target="7">
+	<data key="networkCanvasUUID">84e998bd-63dc-4475-8ce3-209d3cd40e35</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">b711c948-cffe-42a2-bd2b-846d51eaf803</data>
+	<data key="networkCanvasTargetUUID">5c1ce1ed-8af8-4356-a27a-47ac277ba794</data>
+</edge>
+<edge id="38" source="6" target="8">
+	<data key="networkCanvasUUID">767be32a-9a84-4874-a970-ccec278a6269</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">b711c948-cffe-42a2-bd2b-846d51eaf803</data>
+	<data key="networkCanvasTargetUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+</edge>
+<edge id="39" source="8" target="10">
+	<data key="networkCanvasUUID">72f420f7-0fe5-441e-b72d-3347709e897c</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="40" source="8" target="11">
+	<data key="networkCanvasUUID">8bf4464f-0749-49c5-aacb-67f42862ffc8</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="41" source="8" target="12">
+	<data key="networkCanvasUUID">e5b92e54-f65a-4002-b815-ec112998fe70</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="42" source="8" target="13">
+	<data key="networkCanvasUUID">07fc76ff-3c99-41b0-b261-7f1742542830</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="43" source="8" target="14">
+	<data key="networkCanvasUUID">5143e881-21ed-4ca7-95d1-1e364651f48b</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="44" source="8" target="15">
+	<data key="networkCanvasUUID">ca6b6c33-4eb0-4b18-af11-900498047181</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">98980c32-6129-428d-9e87-11d8b81d8551</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="45" source="9" target="10">
+	<data key="networkCanvasUUID">f77593bd-9ab7-4ba5-ae2c-1c246b6a21c3</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+</edge>
+<edge id="46" source="9" target="11">
+	<data key="networkCanvasUUID">9a60c2f0-f189-47dc-89b2-b91e9da7a703</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="47" source="9" target="12">
+	<data key="networkCanvasUUID">209e11ee-ae4b-4b6b-ad28-f655f8e25192</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="48" source="9" target="13">
+	<data key="networkCanvasUUID">66d1e789-5824-4c7e-8260-96cfcc453158</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="49" source="9" target="14">
+	<data key="networkCanvasUUID">2e935417-594a-4578-9090-5cf84dc3d872</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="50" source="9" target="15">
+	<data key="networkCanvasUUID">ed23f65d-c97f-4854-849b-5e3c7cfc6438</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">9468ffd1-a1af-4314-beab-effad4d5568f</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="51" source="10" target="11">
+	<data key="networkCanvasUUID">d6a64546-cf3b-4686-ae6d-28f3ae19d84f</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasTargetUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+</edge>
+<edge id="52" source="10" target="12">
+	<data key="networkCanvasUUID">3d675d70-bbbf-4813-bcfe-f6f6feeb7efc</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="53" source="10" target="13">
+	<data key="networkCanvasUUID">36d0da06-eb78-4d57-a782-63adb7fb16f0</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="54" source="10" target="14">
+	<data key="networkCanvasUUID">f7b64bfc-9a81-4105-9b9a-39cd68ed0679</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="55" source="10" target="15">
+	<data key="networkCanvasUUID">753876c4-b1f9-4842-b091-acc4a4467435</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">5d200d21-a825-40e5-8254-e372fac13288</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="56" source="11" target="12">
+	<data key="networkCanvasUUID">b332ced5-6772-42e6-9cb8-06befbba4c16</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+	<data key="networkCanvasTargetUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+</edge>
+<edge id="57" source="11" target="13">
+	<data key="networkCanvasUUID">9c9c6bdd-5dd3-4f8c-a948-8f99a2ee6d54</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="58" source="11" target="14">
+	<data key="networkCanvasUUID">37cd183b-43cc-467b-8dbf-3d0b5521abee</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="59" source="11" target="15">
+	<data key="networkCanvasUUID">1081fc10-1708-48ad-b2c2-a9bbb4284058</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">59a490c2-3aff-4917-b101-36e85aa3f326</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="60" source="12" target="13">
+	<data key="networkCanvasUUID">e2c9839d-dcca-429a-ad99-e123286449b0</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+	<data key="networkCanvasTargetUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+</edge>
+<edge id="61" source="12" target="14">
+	<data key="networkCanvasUUID">f814b8f1-5b41-465c-9424-69dac7f1a1b3</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="62" source="12" target="15">
+	<data key="networkCanvasUUID">a741fc45-76fb-495d-bbe3-db21366513b9</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">3d2ef674-b9e4-4aaf-a86b-2b2c1fe0d740</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="63" source="13" target="14">
+	<data key="networkCanvasUUID">c13f71ea-99a5-43cb-b103-9265798b1b2d</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+	<data key="networkCanvasTargetUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+</edge>
+<edge id="64" source="13" target="15">
+	<data key="networkCanvasUUID">31b0405c-846f-4c6e-bba2-428ac1063f2c</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">1df9f68c-3f9a-407c-ae4d-a9ad2a43013c</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+<edge id="65" source="14" target="15">
+	<data key="networkCanvasUUID">56631438-4e06-4500-873f-fdded6d8be85</data>
+	<data key="networkCanvasType">know</data>
+	<data key="networkCanvasSourceUUID">de0c6fb0-2cce-4820-8bbc-ff0538e739bd</data>
+	<data key="networkCanvasTargetUUID">cd9ba578-340c-43cd-a739-1c9c194c9d60</data>
+</edge>
+</graph>
+</graphml>
